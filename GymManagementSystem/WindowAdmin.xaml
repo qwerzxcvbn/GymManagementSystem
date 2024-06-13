@@ -1,0 +1,56 @@
+﻿<Window x:Class="GymManagementSystem.WindowAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GymManagementSystem"
+        mc:Ignorable="d"
+        Title="WindowAdmin" Height="600" Width="1000">
+    <Grid>
+        <Grid>
+            <StackPanel>
+                <TextBlock Text="Система управления тренажерным залом" FontSize="30" HorizontalAlignment="Center" Margin="0 0 0 20"></TextBlock>
+                <Button Content="Добавть клиента" Height="30" Width="200" HorizontalAlignment="Left" Name="AddClient" Click="AddClient_Click"></Button>
+                <Button Content="Добавть тренера" Height="30" Width="200" HorizontalAlignment="Center" Margin="-220 -30 0 0" Name="AddTreiners" Click="AddTreiners_Click"></Button>
+                <Button Content="Добавть тренажер" Height="30" Width="200" HorizontalAlignment="Center" Margin="230 -30 0 0" Name="AddSimulator" Click="AddSimulator_Click"></Button>
+                <Button Content="Удалить" Height="30" Width="200" HorizontalAlignment="Right" Margin="0 -30 0 10" Name="Delete" Click="Delete_Click"></Button>
+                <Button Content="Запись на тренировку" Height="30" Width="435" HorizontalAlignment="Left" Name="AddWorkout" Click="AddWorkout_Click"></Button>
+                <TextBox Height="30" Width="380" HorizontalAlignment="Right" FontSize="20" Margin="0 -30 50 0" Name="poisk"></TextBox>
+                <Button Content="Поиск" Height="30" Width="50" HorizontalAlignment="Right" Margin="0 -30 0 10" Name="poisk2" Click="poisk_Click"></Button>
+                <TextBlock Text="Клиенты" HorizontalAlignment="Left"></TextBlock>
+                <TextBlock Text="Тренеры" HorizontalAlignment="Center" Margin="0 -15 0 0"></TextBlock>
+                <TextBlock Text="Тренажеры" HorizontalAlignment="Right" Margin="0 -15 0 0"></TextBlock>
+            </StackPanel>
+            <StackPanel Width="330" Height="400" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                <DataGrid Width="330" HorizontalAlignment="Left" Name="DataClients" AutoGenerateColumns="False" IsReadOnly="True" VerticalAlignment="Top">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=idClient}" MinWidth="30" MaxWidth="30" Header="id"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=numberphone}" MinWidth="80" MaxWidth="80" Header="Номер тел."></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=fio}" MinWidth="130" MaxWidth="130" Header="ФИО"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=subscriber}" MinWidth="80" MaxWidth="80" Header="Абонемент"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            <StackPanel Height="400" VerticalAlignment="Bottom" Width="330" HorizontalAlignment="Center">
+                <DataGrid Width="330" HorizontalAlignment="Center" Margin="0 0 0 0" Name="DataTrainers" AutoGenerateColumns="False" IsReadOnly="True" VerticalAlignment="Top">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=idTrainer}" MinWidth="20" MaxWidth="20" Header="id"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=specialization}" MinWidth="90" MaxWidth="90" Header="Специализация"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=fio}" MinWidth="120" MaxWidth="120" Header="ФИО"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=raspisaniye}" MinWidth="90" MaxWidth="90" Header="Расписание"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+            <StackPanel Width="330" Height="400" VerticalAlignment="Bottom" HorizontalAlignment="Right">
+                <DataGrid Width="330" HorizontalAlignment="Right" Margin="0 0 0 0" Name="DataSimulators" AutoGenerateColumns="False" IsReadOnly="True" VerticalAlignment="Top">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=idSimulator}" MinWidth="20" MaxWidth="20" Header="id"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=nameSimulator}" MinWidth="90" MaxWidth="90" Header="Название"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=description}" MinWidth="120" MaxWidth="120" Header="Описание"></DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding Path=availability}" MinWidth="90" MaxWidth="90" Header="Доступность"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

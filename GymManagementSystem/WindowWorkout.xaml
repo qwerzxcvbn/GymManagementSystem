@@ -1,0 +1,23 @@
+﻿<Window x:Class="GymManagementSystem.WindowWorkout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GymManagementSystem"
+        mc:Ignorable="d"
+        Title="WindowWorkout" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Запись на тренировку" FontSize="30" HorizontalAlignment="Center"></TextBlock>
+            <Button Height="30" Width="200" HorizontalAlignment="Left" Content="Записаться" FontSize="20" Name="AddWork" Click="AddWork_Click"></Button>
+            <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Name="DataWorkout">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=Сlients.fio}" MinWidth="200" MaxWidth="200" Header="ФИО клиента"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Path=Trainers.fio}" MinWidth="200" MaxWidth="200" Header="ФИО тренера"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Path=date}" MinWidth="190" MaxWidth="190" Header="Дата"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Path=Simulators.nameSimulator}" MinWidth="190" MaxWidth="190" Header="Тренажер"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
